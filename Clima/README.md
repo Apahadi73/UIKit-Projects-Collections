@@ -5,4 +5,4 @@ A beautiful, dark-mode enabled weather app. User will be able to check the weath
 
 
 # Demo
-<img src="https://user-images.githubusercontent.com/36856709/130888645-5a6e5b22-560e-4d1f-ab90-273ba61c330b.png" align="left" width="200" height="400" />
+<img src="https://user-images.githubusercontent.com/36856709/131015207-e1fdd0d8-1c6e-4098-ac2b-945fb328b7f3.gif" align="left" width="200" height="400" />
