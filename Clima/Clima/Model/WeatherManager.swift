@@ -14,22 +14,23 @@ protocol WeatherManagerDelegate {
 }
 
 struct WeatherManager {
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=e72ca729af228beabd5d20e3b7749713&units=metric"
+    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=\(apiKey)&units=metric"
     
     var delegate: WeatherManagerDelegate?
     
     //fetch weather by city names that contain a space
-   func fetchWeather(cityName: String){
-       let urlString: String
-       if(cityName.contains(" ")){
-           let cityNameWithSpace = (cityName as NSString).replacingOccurrences(of: " ", with: "+")
-           urlString = "\(weatherURL)&q=\(cityNameWithSpace)"
-       }else{
-           urlString = "\(weatherURL)&q=\(cityName)"
-       }
-       performRequest(with: urlString)
-   }
-   
+    func fetchWeather(cityName: String){
+        let urlString: String
+        if(cityName.contains(" ")){
+            let cityNameWithSpace = (cityName as NSString).replacingOccurrences(of: " ", with: "+")
+            urlString = "\(weatherURL)&q=\(cityNameWithSpace)"
+            print(urlString)
+        }else{
+            urlString = "\(weatherURL)&q=\(cityName)"
+        }
+        performRequest(with: urlString)
+    }
+    
     func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
         performRequest(with: urlString)
